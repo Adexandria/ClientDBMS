@@ -7,9 +7,9 @@ namespace ClientDBMS.Services
 {
     public class SessionFactory
     {
-        public SessionFactory(IConfiguration config)
+        public SessionFactory(AppConfiguration config)
         {
-            var connectionString = config.GetConnectionString("DefaultConnection");
+            var connectionString = config.GetConnectionString();
             _session = ConfigureSession(connectionString).OpenSession();    
         }
 
