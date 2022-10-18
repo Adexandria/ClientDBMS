@@ -52,6 +52,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'ClientDBMS'
-          slot-name: 'clientstaging'
+          slot-name: 'clientdbms-clientstaging'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_75436964B08E445DB3E50875044DDD0E }}
           package: .
