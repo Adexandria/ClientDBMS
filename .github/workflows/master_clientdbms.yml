@@ -38,7 +38,7 @@ jobs:
     runs-on: windows-latest
     needs: build
     environment:
-      name: 'clientstaging'
+      name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -51,7 +51,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'clientdbms(clientstaging)'
-          slot-name: 'clientstaging'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_ebc5c4a0881a4fac89a9f3530a939a6b }}
+          app-name: 'ClientDBMS'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_125998011ddf48549e74c0939846d969 }}
           package: .
