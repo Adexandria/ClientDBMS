@@ -52,6 +52,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'ClientDBMS'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_125998011ddf48549e74c0939846d969 }}
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BEE4463FDC2E4B7899492CFC897E2171 }}
           package: .
