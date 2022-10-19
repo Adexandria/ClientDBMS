@@ -18,7 +18,7 @@ builder.Services.AddDbContext<ClientDbContext>(s => { s.UseSqlServer(config.GetC
 var app = builder.Build();
 
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(s=>s.RoutePrefix = string.Empty);
 
 app.UseHttpsRedirection();
 
