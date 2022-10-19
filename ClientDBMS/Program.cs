@@ -1,7 +1,9 @@
 using ClientDBMS.Services;
 using ClientDBMS.Services.Repository;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+var config = builder.Configuration;
 
 // Add services to the container.
 
@@ -12,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<SessionFactory>();
 builder.Services.AddSingleton<AppConfiguration>();
 builder.Services.AddScoped<IClient, ClientRepository>();
+builder.Services.AddDbContext<ClientDbContext>(s => { s.UseSqlServer(config.GetConnectionString("DefaultConnection")); });
 var app = builder.Build();
 
     app.UseSwagger();
