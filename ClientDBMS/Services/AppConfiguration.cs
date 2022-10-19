@@ -11,7 +11,7 @@
 
         public string GetConnectionString()
         {
-            return _configuration.GetConnectionString("DefaultConnections");
+            return _configuration.GetConnectionString("DefaultConnection");
         }
     }
 }
