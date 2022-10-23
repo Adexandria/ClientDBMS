@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-var config = builder.Configuration;
+var env = builder.Environment.IsDevelopment() ? "Development" : "Production";
+var config = new ConfigurationBuilder().AddJsonFile($"appsettings.{env}.json", false, reloadOnChange: true).Build();
 
 // Add services to the container.
 
